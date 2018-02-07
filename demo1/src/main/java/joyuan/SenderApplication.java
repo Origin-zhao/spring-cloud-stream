@@ -23,8 +23,8 @@ public class SenderApplication {
     //发送消息
     public static void send(ConfigurableApplicationContext context){
         MyChannel bean = context.getBean(MyChannel.class);
-        for (int i=0;i<10;i++){
-            bean.myOutPut2().send(MessageBuilder.withPayload("hello:"+i).build());
+        for (int i=0;i<20;i++){
+            bean.myOutPut2().send(MessageBuilder.withPayload("hello:"+((int)(Math.random()*10))).build());
             try {
                 Thread.sleep(2000);
             } catch (InterruptedException e) {
